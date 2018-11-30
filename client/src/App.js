@@ -8,6 +8,11 @@ import './App.css';
 
 const url = process.env.REACT_APP_API_URL
 
+function logout() {
+  localStorage.removeItem('secret_token');
+ 
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -61,8 +66,9 @@ class App extends Component {
       <div className="App">
       <nav>
         <NavLink className ='links' to='/'>Home</NavLink>
-        <NavLink className='links' to='/signin'>Sign In</NavLink>
         <NavLink className='links' to='/signup'>Sign Up</NavLink>
+        <NavLink className='links' to='/signin'>Sign In</NavLink>
+        <NavLink className='links' to='/signin' onClick={logout}>Log Out</NavLink>
       </nav>
       <section>
         <Switch>
