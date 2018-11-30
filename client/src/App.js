@@ -70,17 +70,18 @@ class App extends Component {
         <NavLink className='links' to='/signin'>Sign In</NavLink>
         <NavLink className='links' to='/signin' onClick={logout}>Log Out</NavLink>
       </nav>
-      <section>
+      <section className = 'content'>
         <Switch>
           <Route path='/signup' component={Register}/>
           <Route path='/signin' component={Login} />
           <Route path = '/' render={() => {
               return (
                 <React.Fragment>
-                <h2>jokes</h2>
-                  <ul>
-                    {this.state.jokes.map(joke => <li key={joke.id}>
+                <h2 className='title'>Dad Jokes</h2>
+                  <ul className='list'>
+                    {this.state.jokes.map(joke => <li key={joke.id} className='jokes'>
                     {joke.setup}
+                    {'.........'}
                     {joke.punchline}
                     </li>)}
                   </ul>
